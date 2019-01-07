@@ -47,7 +47,7 @@ enum Color {
     //we can change what value of each enum will be equal to example below:
     Red = 100,
     Black, //black would be of value 101, it continues incrementing from the previous number. if we set black to 3, then set another number such as salmon
-    Salmon //                                                                                   then salmon would continue from black, making it 4
+    Salmon                                                                                  //then salmon would continue from black, making it 4
 }
 
 let myColor: Color = Color.Green;
@@ -69,4 +69,35 @@ function returnMyName(): string { //means that the return value must be of type 
     //void
 function sayHello(): void{ //no return type
     console.log("Hello!"); //will give error if returning anything
+}
+
+//arguement types 
+function multiply(value1: number, value2: number): number { //function must be passed parameters of type number
+    return value1 * value2;
+}
+
+// function types 
+let myMultiply: (val1: number, val2: number) => number; //myMultiply must be a function with the parameters listed 
+
+// objects
+let userData = {
+    name: "Lucas",
+    age: 19
+}
+//this object must now have fields name and age, and cannot be re-assigned.
+/****************************************************************************************/
+//explicit definition
+let userData2: {name: string, age: number} = {
+    name: "Lucas",
+    age: 19
+}
+
+//complex object
+//two parameters, data and output. 
+//data is an array of type number and output accepts a boolean parameter "all" and outputs an array of type number.
+let complex: {data: number[], output: (all: boolean) => number[]} = {
+    data: [100, 3.99, 10],
+    output: function(all: boolean): number[] {
+        return this.data;
+    }
 }
